@@ -1,5 +1,6 @@
-import DashboardSidebar from '@/components/dashboard/Sidebar';
-import DashboardHeader from '@/components/dashboard/Header';
+import DashboardSidebar from "@/components/dashboard/Sidebar";
+import DashboardHeader from "@/components/dashboard/Header";
+import ProtectedRoute from "@/components/auth/ProtectedRoute";
 
 export default function DashboardLayout({
   children,
@@ -7,14 +8,14 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-gray-50">
-      <DashboardSidebar />
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <DashboardHeader />
-        <main className="flex-1 overflow-y-auto p-6">
-          {children}
-        </main>
+    <ProtectedRoute>
+      <div className="flex h-screen bg-gray-50">
+        <DashboardSidebar />
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <DashboardHeader />
+          <main className="flex-1 overflow-y-auto p-6">{children}</main>
+        </div>
       </div>
-    </div>
+    </ProtectedRoute>
   );
 }

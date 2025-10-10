@@ -19,3 +19,26 @@
 .border-primary {
   border-color: var(--primary);
 }
+
+/* Maps */
+/* Leaflet Map Styles */
+.leaflet-container {
+  font-family: inherit;
+}
+
+.custom-mosque-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+}
+
+.leaflet-popup-tip {
+  background: white !important;
+}
